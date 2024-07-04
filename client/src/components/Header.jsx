@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaMoon } from 'react-icons/fa';
 
-
 export default function Header() {
     const path = useLocation().pathname;
   return (
@@ -15,17 +14,17 @@ export default function Header() {
         <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
           DilSe
         </span>
-        Writingz
+        WritingZ
       </Link>
       <form>
         <TextInput
           type='text'
           placeholder='Search...'
           rightIcon={AiOutlineSearch}
-          className='hidden lg:inline'
+          className=' lg:inline md:inline hidden'
         />
       </form>
-      <Button className='w-12 h-10 lg:hidden' color='gray' pill>
+      <Button className='w-12 h-10 lg:hidden md:hidden' color='gray' pill>
         <AiOutlineSearch />
       </Button>
       <div className='flex gap-2 md:order-2'>
@@ -41,7 +40,7 @@ export default function Header() {
         <Navbar.Link active={path === "/"} as={'div'}>
           <Link to='/'>Home</Link>
         </Navbar.Link>
-        <Navbar.Link active={path === "/About"} as={'div'}>
+        <Navbar.Link active={path === "/about"} as={'div'}>
           <Link to='/about'>About</Link>
         </Navbar.Link>
         <Navbar.Link active={path === "/projects"} as={'div'}>

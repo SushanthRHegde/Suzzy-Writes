@@ -7,6 +7,9 @@ import Signup from "./pages/Signup"
 import Dashboard from "./pages/Dashboard"
 import Projects from "./pages/Projects"
 import Header from "./components/Header"
+import 'flowbite/dist/flowbite.css';
+
+
 export default function App() {
   return (
     <BrowserRouter>
