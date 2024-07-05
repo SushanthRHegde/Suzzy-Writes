@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard"
 import Projects from "./pages/Projects"
 import Header from "./components/Header"
 import 'flowbite/dist/flowbite.css';
+import Footer from "./components/Footer"
 
 
 export default function App() {
@@ -22,10 +23,10 @@ export default function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/projects' element={<Projects />} />
-
-
-
       </Routes>
+      <Footer >
+
+      </Footer>
     </BrowserRouter>
   )
 }
