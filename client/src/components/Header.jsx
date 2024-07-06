@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { Avatar, Button, Dropdown, Navbar, TextInput } from 'flowbite-react';
 import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { FaMoon } from 'react-icons/fa';
-import { useSelector } from 'react-redux';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleTheme } from '../redux/theme/themeSlice';
 export default function Header() {
   const path = useLocation().pathname;
+  const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
-
+  const { theme } = useSelector((state) => state.theme);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavbar = () => {
@@ -39,18 +41,23 @@ export default function Header() {
           </Button>
         </div>
         <div className='flex gap-2 items-center md:order-2'>
-          <Link to='/' className={`text-black ${path === "/" ? "font-bold" : ""} hidden lg:block`}>
+          <Link to='/' className={`text-purple-500 ${path === "/" ? "font-bold" : ""} hidden lg:block mr-4`}>
             Home
           </Link>
-          <Link to='/about' className={`text-black ${path === "/about" ? "font-bold" : ""} hidden lg:block`}>
+          <Link to='/about' className={`text-purple-500 ${path === "/about" ? "font-bold" : ""} hidden lg:block mr-4`}>
             About
           </Link>
-          <Link to='/projects' className={`text-black ${path === "/projects" ? "font-bold" : ""} hidden lg:block`}>
+          <Link to='/projects' className={`text-purple-500 ${path === "/projects" ? "font-bold" : ""} hidden lg:block mr-12` }>
             Projects
           </Link>
-          <Button className='w-12 h-10 hidden sm:inline' color='gray' pill>
-            <FaMoon />
-          </Button>
+          <Button
+          className='w-12 h-10 hidden sm:inline'
+          color='gray'
+          pill
+          onClick={() => dispatch(toggleTheme())}
+        >
+          {theme === 'light' ? <FaSun /> : <FaMoon />}
+        </Button>
           {currentUser ? (
           <Dropdown
             arrowIcon={false}
