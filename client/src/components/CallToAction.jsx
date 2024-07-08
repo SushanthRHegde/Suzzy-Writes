@@ -5,10 +5,10 @@ export default function CallToAction() {
     <div className='flex flex-col sm:flex-row p-3 border border-teal-500 justify-center items-center rounded-tl-3xl rounded-br-3xl text-center'>
         <div className="flex-1 justify-center flex flex-col">
             <h2 className='text-2xl'>
-                My Name is Sushanth R Hegde
+            Sushanth R Hegde is a 4th-year Information Science student at N.M.A.M. Institute of Technology
             </h2>
             <p className='text-gray-500 my-2'>
-                Checkout My Social Media 
+
             </p>
             <Button gradientDuoTone='purpleToPink' className='rounded-tl-xl rounded-bl-none'>
                 <a href="https://github.com/SushanthRHegde" target='_blank' rel='noopener noreferrer'>
@@ -17,7 +17,7 @@ export default function CallToAction() {
             </Button>
         </div>
         <div className="p-7 flex-1">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxN0CVyuA0ITmZizYvxwFGq-XaJl_hMlHhnA&s" />
+            <img src="https://i.pinimg.com/736x/75/19/92/751992e01b33f985df37a212ee05d8ce.jpg" width={300} height={400} />
         </div>
     </div>
   )
